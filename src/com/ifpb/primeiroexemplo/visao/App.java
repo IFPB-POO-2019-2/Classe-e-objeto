@@ -3,33 +3,41 @@ package com.ifpb.primeiroexemplo.visao;
 import com.ifpb.primeiroexemplo.modelo.Aluno;
 
 import java.time.LocalDate;
-import java.time.Month;
-
+import java.time.format.DateTimeFormatter;
 import java.util.Scanner;
 
 public class App {
 
     public static void main(String[] args) {
 
-        Aluno aluno = new Aluno(201822010002L, "João",
-                "111.111.111-01",
-                LocalDate.of(2000, Month.APRIL,01),
-                "ADS");
+        Scanner scanner = new Scanner(System.in);
 
-        Aluno aluno1 = new Aluno();
+        System.out.println("Escreva a matrícula: ");
+        long matricula = scanner.nextLong();
 
+        System.out.println("Escreva o nome: ");
+        String nome = scanner.next();
+
+        System.out.println("Escreva o CPF: ");
+        String cpf = scanner.next();
+
+        System.out.println("Escreva a data de nascimento: ");
+        String nascimentoString = scanner.next();
+
+        System.out.println("Escreva o curso: ");
+        String curso = scanner.next();
+
+        DateTimeFormatter formatter = DateTimeFormatter.ofPattern("dd/MM/yyyy");
+        LocalDate nascimento = LocalDate.parse(nascimentoString, formatter);
+
+        Aluno aluno = new Aluno(matricula, nome, cpf, nascimento, curso);
+
+        System.out.println("--- Informações do aluno ---");
+        System.out.println("CPF: "+aluno.getCpf());
         System.out.println("Matrícula: "+aluno.getMatricula());
-        System.out.println("Matrícula: "+aluno1.getMatricula());
-
-        System.out.println("Quantidade de alunos: "+Aluno.getContAluno());
-
-
-//        Como ler os dados
-//        Scanner scanner = new Scanner(System.in);
-//
-//        System.out.println("Escreva sua idade: ");
-//        int idade = scanner.nextInt();
-//        System.out.println("Idade: "+idade);
+        System.out.println("Nome: "+aluno.getNome());
+        System.out.println("Nascimento: "+formatter.format(aluno.getNascimento()));
+        System.out.println("Curso: "+aluno.getCurso());
 
     }
 
