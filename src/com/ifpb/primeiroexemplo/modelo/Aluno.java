@@ -23,4 +23,14 @@ public class Aluno extends Pessoa {
         this.curso = curso;
     }
 
+    @Override
+    public void imprimirDados(){
+        System.out.println("---- DADOS DO ALUNO ----");
+        System.out.println("Matrícula: "+getMatricula());
+        System.out.println("Nome: "+getNome());
+        System.out.println("CPF:" +getCpf());
+        System.out.println("Nascimento: "+getNascimento());
+        System.out.println("Curso: "+curso);
+    }
+
 }

@@ -16,7 +16,8 @@ public abstract class Pessoa {
         this.nascimento = nascimento;
     }
 
-    public long getMatricula() {
+    //Método final não pode ser sobrescrito - não pode combinar com abstract
+    public final long getMatricula() {
         return matricula;
     }
 
@@ -49,12 +50,6 @@ public abstract class Pessoa {
     }
 
     //Depois aprenderemos a fazer da maneira correta.
-    public abstract void imprimirDados(){
-        System.out.println("---- DADOS DA PESSOA ----");
-        System.out.println("Matricula: "+matricula);
-        System.out.println("CPF: "+cpf);
-        System.out.println("Nome: "+nome);
-        System.out.println("Nascimento: "+nascimento);
-    }
+    public abstract void imprimirDados();
 
 }
