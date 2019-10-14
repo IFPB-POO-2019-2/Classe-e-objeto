@@ -2,7 +2,7 @@ package com.ifpb.primeiroexemplo.modelo;
 
 import java.time.LocalDate;
 
-public class Pessoa {
+public abstract class Pessoa {
 
     private long matricula;
     private String cpf;
@@ -47,4 +47,14 @@ public class Pessoa {
     public void setNascimento(LocalDate nascimento) {
         this.nascimento = nascimento;
     }
+
+    //Depois aprenderemos a fazer da maneira correta.
+    public abstract void imprimirDados(){
+        System.out.println("---- DADOS DA PESSOA ----");
+        System.out.println("Matricula: "+matricula);
+        System.out.println("CPF: "+cpf);
+        System.out.println("Nome: "+nome);
+        System.out.println("Nascimento: "+nascimento);
+    }
+
 }

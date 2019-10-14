@@ -30,4 +30,15 @@ public class Professor extends Pessoa {
         this.titulacao = titulacao;
     }
 
+    @Override
+    public void imprimirDados(){
+        System.out.println("--- DADOS DO PROFESSOR ---");
+        System.out.println("Matrícula: "+getMatricula());
+        System.out.println("CPF: "+getCpf());
+        System.out.println("Nome: "+getNome());
+        System.out.println("Nascimento: "+getNascimento());
+        System.out.println("Salário: "+salario);
+        System.out.println("Titulação: "+titulacao);
+    }
+
 }

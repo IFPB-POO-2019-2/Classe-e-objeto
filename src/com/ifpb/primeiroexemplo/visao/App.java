@@ -1,43 +1,23 @@
 package com.ifpb.primeiroexemplo.visao;
 
 import com.ifpb.primeiroexemplo.modelo.Aluno;
+import com.ifpb.primeiroexemplo.modelo.Pessoa;
+import com.ifpb.primeiroexemplo.modelo.Professor;
 
 import java.time.LocalDate;
-import java.time.format.DateTimeFormatter;
-import java.util.Scanner;
 
 public class App {
 
     public static void main(String[] args) {
 
-        Scanner scanner = new Scanner(System.in);
+        Pessoa professor = new Professor(1234L, "111.111.111-01", "João",
+                LocalDate.now(), 2000, "Mestrado");
 
-        System.out.println("Escreva a matrícula: ");
-        long matricula = scanner.nextLong();
+        Pessoa aluno = new Aluno(4321L, "222.222.222-02", "Maria",
+                LocalDate.now(), "ADS");
 
-        System.out.println("Escreva o nome: ");
-        String nome = scanner.next();
-
-        System.out.println("Escreva o CPF: ");
-        String cpf = scanner.next();
-
-        System.out.println("Escreva a data de nascimento: ");
-        String nascimentoString = scanner.next();
-
-        System.out.println("Escreva o curso: ");
-        String curso = scanner.next();
-
-        DateTimeFormatter formatter = DateTimeFormatter.ofPattern("dd/MM/yyyy");
-        LocalDate nascimento = LocalDate.parse(nascimentoString, formatter);
-
-        Aluno aluno = new Aluno(matricula, nome, cpf, nascimento, curso);
-
-        System.out.println("--- Informações do aluno ---");
-        System.out.println("CPF: "+aluno.getCpf());
-        System.out.println("Matrícula: "+aluno.getMatricula());
-        System.out.println("Nome: "+aluno.getNome());
-        System.out.println("Nascimento: "+formatter.format(aluno.getNascimento()));
-        System.out.println("Curso: "+aluno.getCurso());
+        professor.imprimirDados();
+        aluno.imprimirDados();
 
     }
 
