@@ -19,6 +19,8 @@ public class App {
         professor.imprimirDados();
         aluno.imprimirDados();
 
+
+
     }
 
 }
